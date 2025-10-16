@@ -2,7 +2,7 @@ import Nav from './Nav';
 
 const Header = () => {
   return (
-    <header>
+    <header className="header-section">
       <img src="logo.png" alt="Little Lemon" />
       <Nav />
     </header>

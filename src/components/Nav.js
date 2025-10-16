@@ -9,7 +9,7 @@ const Nav = () => {
   ];
 
   return (
-    <nav>
+    <nav className="nav-section">
       <ul>
         {link.map((item) => (
           <li key={item.name}>
