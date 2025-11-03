@@ -132,6 +132,8 @@
   border-radius: 16px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .special-card:hover {
@@ -147,6 +149,9 @@
 
 .special-content {
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .special-header {
@@ -181,6 +186,7 @@
   font-weight: 700;
   color: var(--highlight-dark-gray);
   transition: color 0.3s ease;
+  margin-top: auto;
 }
 
 .order-link:hover {
