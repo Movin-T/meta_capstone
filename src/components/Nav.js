@@ -1,9 +1,11 @@
+import { Link } from 'react-router-dom';
+
 const Nav = () => {
   const link = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Menu', path: '/menu' },
-    { name: 'Reservations', path: '/reservations' },
+    { name: 'Reservations', path: '/booking' },
     { name: 'Order Online', path: '/order-online' },
     { name: 'Login', path: '/login' },
   ];
@@ -13,7 +15,7 @@ const Nav = () => {
       <ul>
         {link.map((item) => (
           <li key={item.name}>
-            <a href={item.path}>{item.name}</a>
+            <Link to={item.path}>{item.name}</Link>
           </li>
         ))}
       </ul>
