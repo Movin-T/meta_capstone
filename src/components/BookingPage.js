@@ -1,6 +1,11 @@
+import { useState } from 'react';
 import BookingForm from './BookingForm';
+import AvailableTimes from './AvailableTimes';
 
-const BookingPage = () => {
+const BookingPage = ({ availableTimes, dispatch }) => {
+  // Track selected date to show available times
+  const [selectedDate, setSelectedDate] = useState('');
+
   return (
     <section className="booking-page">
       <div className="container">
@@ -10,7 +15,23 @@ const BookingPage = () => {
           dining experience. Choose your preferred date and time, and we'll have
           everything ready for you.
         </p>
-        <BookingForm />
+
+        <div className="booking-content">
+          <div className="booking-form-section">
+            <BookingForm
+              availableTimes={availableTimes}
+              dispatch={dispatch}
+              onDateChange={setSelectedDate}
+            />
+          </div>
+
+          <div className="available-times-wrapper">
+            <AvailableTimes
+              availableTimes={availableTimes}
+              selectedDate={selectedDate}
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

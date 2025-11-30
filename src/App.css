@@ -365,6 +365,13 @@
   font-size: 1.125rem;
 }
 
+.booking-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
 .booking-form {
   max-width: 500px;
   margin: 0 auto;
@@ -372,6 +379,81 @@
   padding: 2.5rem;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+   AVAILABLE TIMES COMPONENT
+   ======================================== */
+
+.available-times-section {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.available-times-section h3 {
+  color: var(--primary-green);
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+}
+
+.selected-date-info {
+  color: var(--primary-green);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem;
+  background-color: var(--highlight-light-gray);
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.times-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.time-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--highlight-light-gray);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.time-slot:hover {
+  border-color: var(--primary-yellow);
+  background-color: var(--secondary-light-peach);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.time-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-green);
+  margin-bottom: 0.5rem;
+}
+
+.availability-badge {
+  font-size: 0.75rem;
+  color: #28a745;
+  background-color: #d4edda;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.no-times-message {
+  color: var(--primary-green);
+  text-align: center;
+  padding: 2rem;
+  font-style: italic;
 }
 
 .form-group {
@@ -509,6 +591,15 @@
   .about-image-1,
   .about-image-2 {
     height: 250px;
+  }
+
+  .booking-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .times-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   }
 }
 

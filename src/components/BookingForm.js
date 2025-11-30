@@ -1,21 +1,21 @@
 import { useState } from 'react';
 
-const BookingForm = () => {
+const BookingForm = ({ availableTimes, dispatch, onDateChange }) => {
   // Form state
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState('Birthday');
 
-  // Available times state
-  // eslint-disable-next-line no-unused-vars
-  const [availableTimes, setAvailableTimes] = useState([
-    '17:00',
-    '18:00',
-    '19:00',
-    '20:00',
-    '21:00',
-  ]);
+  // Handle date change and notify parent
+  const handleDateChange = (e) => {
+    const newDate = e.target.value;
+    setDate(newDate);
+    dispatch({ type: 'UPDATE_TIMES', payload: newDate });
+    if (onDateChange) {
+      onDateChange(newDate);
+    }
+  };
 
   // Handle form submission
   const handleSubmit = (e) => {
@@ -42,7 +42,7 @@ const BookingForm = () => {
           type="date"
           id="res-date"
           value={date}
-          onChange={(e) => setDate(e.target.value)}
+          onChange={handleDateChange}
           required
         />
       </div>
