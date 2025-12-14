@@ -2,7 +2,7 @@ import { useState } from 'react';
 import BookingForm from './BookingForm';
 import AvailableTimes from './AvailableTimes';
 
-const BookingPage = ({ availableTimes, dispatch }) => {
+const BookingPage = ({ availableTimes, dispatch, submitForm }) => {
   // Track selected date to show available times
   const [selectedDate, setSelectedDate] = useState('');
 
@@ -21,6 +21,7 @@ const BookingPage = ({ availableTimes, dispatch }) => {
             <BookingForm
               availableTimes={availableTimes}
               dispatch={dispatch}
+              submitForm={submitForm}
               onDateChange={setSelectedDate}
             />
           </div>

@@ -1,6 +1,11 @@
 import { useState } from 'react';
 
-const BookingForm = ({ availableTimes, dispatch, onDateChange }) => {
+const BookingForm = ({
+  availableTimes,
+  dispatch,
+  onDateChange,
+  submitForm,
+}) => {
   // Form state
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
@@ -31,7 +36,7 @@ const BookingForm = ({ availableTimes, dispatch, onDateChange }) => {
 
     console.log('Booking submitted:', formData);
 
-    // TODO: Add API integration or further processing here
+    submitForm(formData);
   };
 
   return (
