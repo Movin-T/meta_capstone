@@ -110,6 +110,13 @@ p {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.btn-primary:disabled {
+  opacity: 50%;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
 /* Links */
 a {
   text-decoration: none;

@@ -22,6 +22,18 @@ const BookingForm = ({
     }
   };
 
+  // Validation
+  const isDateValid = () => date !== '';
+  const isTimeValid = () => time !== '';
+  const isGuestsValid = () => guests >= 1 && guests <= 10;
+  const isOccasionValid = () => occasion !== '';
+
+  const isFormValid =
+    isDateValid() && isTimeValid() && isGuestsValid() && isOccasionValid();
+
+  // Get today's date for min attribute
+  const today = new Date().toISOString().split('T')[0];
+
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -47,6 +59,7 @@ const BookingForm = ({
           type="date"
           id="res-date"
           value={date}
+          min={today}
           onChange={handleDateChange}
           required
         />
@@ -95,7 +108,12 @@ const BookingForm = ({
         </select>
       </div>
 
-      <button type="submit" className="btn btn-primary">
+      <button
+        type="submit"
+        className="btn btn-primary"
+        disabled={!isFormValid}
+        aria-label="On Click"
+      >
         Make Your reservation
       </button>
     </form>
