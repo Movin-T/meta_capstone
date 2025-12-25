@@ -33,7 +33,7 @@ const Specials = () => {
       <div className="container">
         <div className="specials-header">
           <h2>This week's specials!</h2>
-          <Link to="/menu" className="btn btn-primary">
+          <Link to="/menu" className="btn btn-primary" aria-label="On Click">
             Online Menu
           </Link>
         </div>
@@ -47,7 +47,11 @@ const Specials = () => {
                   <span className="price">{special.price}</span>
                 </div>
                 <p>{special.description}</p>
-                <Link to="/order-online" className="order-link">
+                <Link
+                  to="/order-online"
+                  className="order-link"
+                  aria-label="On Click"
+                >
                   Order a delivery
                   <svg
                     width="16"

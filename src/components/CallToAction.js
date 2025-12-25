@@ -11,7 +11,7 @@ const CallToAction = () => {
             We are a family owned Mediterranean restaurant, focused on
             traditional recipes served with a modern twist.
           </p>
-          <Link to="/booking" className="btn btn-primary">
+          <Link to="/booking" className="btn btn-primary" aria-label="On Click">
             Reserve a Table
           </Link>
         </div>

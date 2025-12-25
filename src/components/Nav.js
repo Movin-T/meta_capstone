@@ -15,7 +15,9 @@ const Nav = () => {
       <ul>
         {link.map((item) => (
           <li key={item.name}>
-            <Link to={item.path}>{item.name}</Link>
+            <Link to={item.path} aria-label="On Click">
+              {item.name}
+            </Link>
           </li>
         ))}
       </ul>

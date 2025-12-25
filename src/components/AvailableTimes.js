@@ -1,6 +1,6 @@
 const AvailableTimes = ({ availableTimes, selectedDate }) => {
   return (
-    <div className="available-times-section">
+    <section className="available-times-section">
       <h3>Available Reservation Times</h3>
       {selectedDate && (
         <p className="selected-date-info">
@@ -29,7 +29,7 @@ const AvailableTimes = ({ availableTimes, selectedDate }) => {
             : 'Select a date to view available times.'}
         </p>
       )}
-    </div>
+    </section>
   );
 };
 

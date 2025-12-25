@@ -11,7 +11,7 @@ const ConfirmedBooking = () => {
   }, []);
 
   return (
-    <div className="container confirmed-booking">
+    <section className="container confirmed-booking">
       <div className="confirmation-header">
         <h1>Booking Confirmed!</h1>
       </div>
@@ -35,7 +35,7 @@ const ConfirmedBooking = () => {
           </ul>
         </div>
       )}
-    </div>
+    </section>
   );
 };
 

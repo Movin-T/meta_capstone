@@ -13,22 +13,34 @@ const Footer = () => {
             <h4>Doormat Navigation</h4>
             <ul>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/" aria-label="On Click">
+                  Home
+                </Link>
               </li>
               <li>
-                <Link to="/about">About</Link>
+                <Link to="/about" aria-label="On Click">
+                  About
+                </Link>
               </li>
               <li>
-                <Link to="/menu">Menu</Link>
+                <Link to="/menu" aria-label="On Click">
+                  Menu
+                </Link>
               </li>
               <li>
-                <Link to="/booking">Reservations</Link>
+                <Link to="/booking" aria-label="On Click">
+                  Reservations
+                </Link>
               </li>
               <li>
-                <Link to="/order-online">Order Online</Link>
+                <Link to="/order-online" aria-label="On Click">
+                  Order Online
+                </Link>
               </li>
               <li>
-                <Link to="/login">Login</Link>
+                <Link to="/login" aria-label="On Click">
+                  Login
+                </Link>
               </li>
             </ul>
           </div>
@@ -50,6 +62,7 @@ const Footer = () => {
                   href="https://facebook.com/littlelemon"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="On Click"
                 >
                   Facebook
                 </a>
@@ -59,6 +72,7 @@ const Footer = () => {
                   href="https://instagram.com/littlelemon"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="On Click"
                 >
                   Instagram
                 </a>
@@ -68,6 +82,7 @@ const Footer = () => {
                   href="https://twitter.com/littlelemon"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="On Click"
                 >
                   Twitter
                 </a>
