@@ -1,7 +1,14 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Nav = () => {
-  const link = [
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Menu', path: '/menu' },
@@ -12,10 +19,22 @@ const Nav = () => {
 
   return (
     <nav className="nav-section">
-      <ul>
-        {link.map((item) => (
+      <button
+        className="menu-toggle"
+        onClick={toggleMenu}
+        aria-label="Toggle Menu"
+        aria-expanded={isMenuOpen}
+      >
+        <span className={`burger ${isMenuOpen ? 'open' : ''}`}></span>
+      </button>
+      <ul className={isMenuOpen ? 'nav-links open' : 'nav-links'}>
+        {navLinks.map((item) => (
           <li key={item.name}>
-            <Link to={item.path} aria-label="On Click">
+            <Link
+              to={item.path}
+              aria-label="On Click"
+              onClick={() => setIsMenuOpen(false)}
+            >
               {item.name}
             </Link>
           </li>
